@@ -517,7 +517,7 @@ and professional growth.
 
 ## Bonus Task — Resource Usage Under Load
 
-The objective was to compare QuickTicket resource usage at rest, under normal load, and under load with payment failures and latency enabled. All commands below were run from the repository root.
+The objective was - compare QuickTicket resource usage at rest, under normal load, and under load with payment failures and latency enabled. All commands below were run from the repository root.
 
 Only the five QuickTicket containers are included in the resource tables. The unrelated container named `postgres` (without the `app-` prefix) was excluded. All five containers showed a memory limit of 3.685 GiB.
 
