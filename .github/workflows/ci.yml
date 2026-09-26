@@ -16,7 +16,7 @@ jobs:
     name: Build, push, and update QuickTicket images
     runs-on: ubuntu-latest
 
-    if: ${{ github.event_name == 'workflow_dispatch' || !startsWith(github.event.head_commit.message, 'ci: update image tags') }}
+    if: "${{ github.event_name == 'workflow_dispatch' || !startsWith(github.event.head_commit.message, 'ci:') }}"
 
     steps:
       - name: Check out repository
