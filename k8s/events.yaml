@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: events
-          image: ghcr.io/damirbayazitov/quickticket-events:cac0f8de827a481572525b403c3a0005f2e3f321
+          image: ghcr.io/damirbayazitov/quickticket-events:c1f384868d900fdcc7e39f83bb86884ed1b991f7
           imagePullPolicy: Always
           env:
             - name: DB_HOST
