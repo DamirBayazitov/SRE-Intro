@@ -8,7 +8,7 @@ resources:
 
 gateway:
   replicas: 1
-  image: ghcr.io/damirbayazitov/quickticket-gateway:c1f384868d900fdcc7e39f83bb86884ed1b991f7
+  image: ghcr.io/damirbayazitov/quickticket-gateway:836ff2a39d0abff66c1cbd7d9720dee914c477de
   imagePullPolicy: Always
   port: 8080
   eventsUrl: http://events:8081
@@ -17,7 +17,7 @@ gateway:
 
 events:
   replicas: 1
-  image: ghcr.io/damirbayazitov/quickticket-events:c1f384868d900fdcc7e39f83bb86884ed1b991f7
+  image: ghcr.io/damirbayazitov/quickticket-events:836ff2a39d0abff66c1cbd7d9720dee914c477de
   imagePullPolicy: Always
   port: 8081
   db:
@@ -35,7 +35,7 @@ events:
 
 payments:
   replicas: 1
-  image: ghcr.io/damirbayazitov/quickticket-payments:c1f384868d900fdcc7e39f83bb86884ed1b991f7
+  image: ghcr.io/damirbayazitov/quickticket-payments:836ff2a39d0abff66c1cbd7d9720dee914c477de
   imagePullPolicy: Always
   port: 8082
   failureRate: "0.0"

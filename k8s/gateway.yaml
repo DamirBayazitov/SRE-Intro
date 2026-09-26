@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: gateway
-          image: ghcr.io/damirbayazitov/quickticket-gateway:c1f384868d900fdcc7e39f83bb86884ed1b991f7
+          image: ghcr.io/damirbayazitov/quickticket-gateway:836ff2a39d0abff66c1cbd7d9720dee914c477de
           imagePullPolicy: Always
           env:
             - name: EVENTS_URL
