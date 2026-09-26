@@ -9,7 +9,7 @@ resources:
 gateway:
   replicas: 1
   image: ghcr.io/damirbayazitov/quickticket-gateway:cac0f8de827a481572525b403c3a0005f2e3f321
-  imagePullPolicy: IfNotPresent
+  imagePullPolicy: Always
   port: 8080
   eventsUrl: http://events:8081
   paymentsUrl: http://payments:8082
@@ -18,7 +18,7 @@ gateway:
 events:
   replicas: 1
   image: ghcr.io/damirbayazitov/quickticket-events:cac0f8de827a481572525b403c3a0005f2e3f321
-  imagePullPolicy: IfNotPresent
+  imagePullPolicy: Always
   port: 8081
   db:
     host: postgres
@@ -36,7 +36,7 @@ events:
 payments:
   replicas: 1
   image: ghcr.io/damirbayazitov/quickticket-payments:cac0f8de827a481572525b403c3a0005f2e3f321
-  imagePullPolicy: IfNotPresent
+  imagePullPolicy: Always
   port: 8082
   failureRate: "0.0"
   latencyMs: "0"
