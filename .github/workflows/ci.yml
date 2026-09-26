@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - feature/lab5
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-push:
+    name: Build and push QuickTicket images
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push gateway
+        run: |
+          docker build \
+            --tag ghcr.io/damirbayazitov/quickticket-gateway:${{ github.sha }} \
+            ./app/gateway
+          docker push \
+            ghcr.io/damirbayazitov/quickticket-gateway:${{ github.sha }}
+
+      - name: Build and push events
+        run: |
+          docker build \
+            --tag ghcr.io/damirbayazitov/quickticket-events:${{ github.sha }} \
+            ./app/events
+          docker push \
+            ghcr.io/damirbayazitov/quickticket-events:${{ github.sha }}
+
+      - name: Build and push payments
+        run: |
+          docker build \
+            --tag ghcr.io/damirbayazitov/quickticket-payments:${{ github.sha }} \
+            ./app/payments
+          docker push \
+            ghcr.io/damirbayazitov/quickticket-payments:${{ github.sha }}
