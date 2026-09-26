@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: events
-          image: quickticket-events:v1
-          imagePullPolicy: Never
+          image: ghcr.io/damirbayazitov/quickticket-events:cac0f8de827a481572525b403c3a0005f2e3f321
+          imagePullPolicy: IfNotPresent
           env:
             - name: DB_HOST
               value: "postgres"
